@@ -9,3 +9,7 @@ body {
   font-family: "Consolas", sans-serif;
   /* background-image: url(/Login.jpg); */
 }
+
+.row {
+  display: block
+}

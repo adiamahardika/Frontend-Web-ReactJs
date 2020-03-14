@@ -1,25 +1,27 @@
 import React from 'react';
-import logo from './logo.svg';
+import { BrowserRouter as Router, Route } from "react-router-dom";
+
+// import logo from './logo.svg';
 import './App.css';
+import Home from "./controllers/Home"
+import Account from "./controllers/Account"
+import Product from "./controllers/Product"
+import Category from "./controllers/Category"
+import Province from "./controllers/Province"
+import City from "./controllers/City"
+import SubCity from "./controllers/SubCity"
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Route exact path="/" component={Home} />
+      <Route path="/Account" component={Account} />
+      <Route path="/product" component={Product} />
+      <Route path="/category" component={Category} />
+      <Route path="/province" component={Province} />
+      <Route path="/city" component={City} />
+      <Route path="/sub-city" component={SubCity} />
+    </Router>
   );
 }
 
