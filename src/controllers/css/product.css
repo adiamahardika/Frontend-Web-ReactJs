@@ -6,6 +6,24 @@ body {
 
 body {
   background-color: #ffffff;
-  font-family: "Consolas", sans-serif;
+  font-family: "MaisonNeue-Book", sans-serif;
   /* background-image: url(/Login.jpg); */
+}
+.table{
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-family: "MaisonNeue-Book", sans-serif;
+  min-width: 100px;
+  text-align: center;
+}
+.row{
+  margin-top: 20px;
+  margin-bottom: 20px
+}
+.item {
+  min-width: 100px;
+}
+
+.desc {
+  min-width: 400px;
 }

@@ -8,6 +8,10 @@ import Card from "../components/Card"
 
 class Home extends Component {
     state = {}
+
+    componentDidMount() {
+        localStorage.setItem('id', 0);
+    }
     render() {
         return (
             <div className="row">
