@@ -43,8 +43,6 @@ class Add extends Component {
         await this.props.dispatch(createProduct(data));
         // await this.props.onHide();
         this.props.history.push('/product')
-
-        console.log(data)
     }
 
     render(){

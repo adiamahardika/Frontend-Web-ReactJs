@@ -8,11 +8,18 @@ import Navbar from "../components/Navbar"
 import Add from "../components/modal/product/Add"
 import Delete from "../components/modal/product/Delete"
 class Product extends Component {
+    state = {
+      selectProductDelete: []
+    }
     componentDidMount(){
         // if(!localStorage.getItem('token'))
         //     this.props.history.push('/login')
         this.props.dispatch(readProduct())
-      
+    }
+    onSelectProductDelete = (product) => {
+      this.setState({
+        selectProductDelete: product
+      })
     }
 
     parseToRupiah(number)
@@ -25,7 +32,7 @@ class Product extends Component {
     render() {
       // console.log(this.props)
     const { products } = this.props
-    const listproduct = products.map((product, index) => <Item key={index} product={product} parseToRupiah={this.parseToRupiah}/>);
+    const listproduct = products.map((product, index) => <Item key={index} product={product} parseToRupiah={this.parseToRupiah} onSelectProductDelete={this.onSelectProductDelete}/>);
         return (
           <Fragment>
             <Navbar />
@@ -65,6 +72,7 @@ class Product extends Component {
           </div>
           </div>
           <Add />
+          <Delete product={this.state.selectProductDelete}/>
           </Fragment>
         );
     }
