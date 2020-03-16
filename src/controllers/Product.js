@@ -7,9 +7,11 @@ import Item from '../components/modal/product/Item'
 import Navbar from "../components/Navbar"
 import Add from "../components/modal/product/Add"
 import Delete from "../components/modal/product/Delete"
+import Edit from '../components/modal/product/Edit';
 class Product extends Component {
     state = {
-      selectProductDelete: []
+      selectProductDelete: [],
+      selectProductEdit: []
     }
     componentDidMount(){
         // if(!localStorage.getItem('token'))
@@ -19,6 +21,11 @@ class Product extends Component {
     onSelectProductDelete = (product) => {
       this.setState({
         selectProductDelete: product
+      })
+    }
+    onSelectProductEdit = (product) => {
+      this.setState({
+        selectProductEdit: product
       })
     }
 
@@ -32,7 +39,7 @@ class Product extends Component {
     render() {
       // console.log(this.props)
     const { products } = this.props
-    const listproduct = products.map((product, index) => <Item key={index} product={product} parseToRupiah={this.parseToRupiah} onSelectProductDelete={this.onSelectProductDelete}/>);
+    const listproduct = products.map((product, index) => <Item key={index} product={product} parseToRupiah={this.parseToRupiah} onSelectProductEdit={this.onSelectProductEdit} onSelectProductDelete={this.onSelectProductDelete}/>);
         return (
           <Fragment>
             <Navbar />
@@ -73,6 +80,7 @@ class Product extends Component {
           </div>
           <Add />
           <Delete product={this.state.selectProductDelete}/>
+          <Edit product={this.state.selectProductEdit}/>
           </Fragment>
         );
     }

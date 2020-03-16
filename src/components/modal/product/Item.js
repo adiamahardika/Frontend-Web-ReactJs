@@ -1,16 +1,20 @@
 import React, { Fragment} from 'react'
 import '../../../controllers/css/product.css'
-import Delete from '../product/Delete'
-const Item = ({ product, parseToRupiah, onSelectProductDelete}) => {
+
+const Item = ({ product, parseToRupiah, onSelectProductDelete, onSelectProductEdit}) => {
     const onClickDelete = (event) => {
         event.preventDefault();
         onSelectProductDelete(product);
+    }
+    const onClickEdit = (event) => {
+        event.preventDefault();
+        onSelectProductEdit(product);
     }
     return(
     <Fragment>
     <tr>
     <td class='manage'>
-        <button type="button" class="btn btn-sm btn-primary">Edit</button>
+        <button type="button" class="btn btn-sm btn-primary" data-toggle='modal' data-target='#editModal' onClick={onClickEdit}>Edit</button>
         <button type="button" class="btn btn-sm btn-primary" data-toggle='modal' data-target='#deleteModal'  onClick={onClickDelete} data-dismiss='modal'>Delete</button>
     </td>
     <td class='item'>{product.id}</td>
@@ -27,7 +31,6 @@ const Item = ({ product, parseToRupiah, onSelectProductDelete}) => {
     <td class='item'>{product.date_added}</td>
     <td class='item'>{product.date_updated}</td>
     </tr>
-    <Delete/>
     </Fragment>
     )
 }
