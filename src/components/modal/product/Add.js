@@ -41,7 +41,6 @@ class Add extends Component {
         data.append("id_product_group", this.state.id_product_group);
 
         await this.props.dispatch(createProduct(data));
-        // await this.props.onHide();
         this.props.history.push('/product')
     }
 

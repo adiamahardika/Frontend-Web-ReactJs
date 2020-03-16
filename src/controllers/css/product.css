@@ -16,6 +16,13 @@ body {
   min-width: 100px;
   text-align: center;
 }
+.table .thead-light th{
+  background-color: #56ab2f;
+  color: #ffffff;
+  border-color: white;
+  font-size: medium;
+  font-style: inherit;
+}
 .row{
   margin-top: 20px;
   margin-bottom: 20px;
@@ -33,7 +40,8 @@ body {
 }
 
 .modal-header{
-  color: black;
+  background-color: #56ab2f;
+  color: white;
   font-family: "MaisonNeue-Book", sans-serif;
   font-size: 20px;
 }
@@ -42,4 +50,12 @@ body {
 color: black;
 font-family: "MaisonNeue-Book", sans-serif;
 font-size: 20px;
+}
+.btn-success{
+  background-color:#56ab2f !important;
+  border: none;
+}
+.btn-outline-success{
+  border: 2px solid #56ab2f !important;
+  color: #56ab2f !important;
 }

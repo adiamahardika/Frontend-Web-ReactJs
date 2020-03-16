@@ -37,7 +37,6 @@ class Product extends Component {
 	  return 'Rp. '+rupiah.split('',rupiah.length-1).reverse().join('')
     }
     render() {
-      // console.log(this.props)
     const { products } = this.props
     const listproduct = products.map((product, index) => <Item key={index} product={product} parseToRupiah={this.parseToRupiah} onSelectProductEdit={this.onSelectProductEdit} onSelectProductDelete={this.onSelectProductDelete}/>);
         return (
@@ -45,8 +44,9 @@ class Product extends Component {
             <Navbar />
             <div className="container">
             <div className="row">
-              <div className="col-lg-8" style={{fontSize:'20px', marginTop:'auto'}}>
+              <div className="col-lg-8" style={{fontSize:'32px', marginTop:'auto', fontFamily:'MaisonNeueExtended-Bold,sans-serif'}}><h2>
               MANAGE PRODUCT
+              </h2>
               </div>
               <div className="col-lg-4" style={{textAlign:'right'}}>
               <button class="btn btn-md btn-success" data-toggle='modal' data-target='#createModal' style={{borderRadius:25, fontSize:'12px', color:'white'}}>ADD PRODUCT</button>
