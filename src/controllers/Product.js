@@ -1,17 +1,18 @@
 import React, { Component, Fragment } from 'react';
 import "./css/product.css";
 import {connect} from 'react-redux'
-import {readProduct} from '../redux/actions/product'
+import {readProduct, createProduct} from '../redux/actions/product'
 import { withRouter } from "react-router"
 import Item from '../components/modal/product/Item'
 import Navbar from "../components/Navbar"
-
+import Add from "../components/modal/product/Add"
+import Delete from "../components/modal/product/Delete"
 class Product extends Component {
     componentDidMount(){
-        if(!localStorage.getItem('token')){
-            this.props.history.push('/login')
-        }else{
-        this.props.dispatch(readProduct())}
+        // if(!localStorage.getItem('token'))
+        //     this.props.history.push('/login')
+        this.props.dispatch(readProduct())
+      
     }
 
     parseToRupiah(number)
@@ -22,24 +23,26 @@ class Product extends Component {
 	  return 'Rp. '+rupiah.split('',rupiah.length-1).reverse().join('')
     }
     render() {
+      // console.log(this.props)
     const { products } = this.props
     const listproduct = products.map((product, index) => <Item key={index} product={product} parseToRupiah={this.parseToRupiah}/>);
         return (
           <Fragment>
             <Navbar />
-            <div class="container">
-            <div class="row">
-              <div class="col-lg-8">
+            <div className="container">
+            <div className="row">
+              <div className="col-lg-8" style={{fontSize:'20px', marginTop:'auto'}}>
               MANAGE PRODUCT
               </div>
-              <div class="col-lg-4">
-              MANAGE PRODUCT
+              <div className="col-lg-4" style={{textAlign:'right'}}>
+              <button class="btn btn-md btn-success" data-toggle='modal' data-target='#createModal' style={{borderRadius:25, fontSize:'12px', color:'white'}}>ADD PRODUCT</button>
               </div>
             </div>
-            <div class="row">
-            <table class="table table-bordered table-hover table-responsive">
-            <thead class="thead-light">
+            <div className="row">
+            <table className="table table-bordered table-hover table-responsive">
+            <thead className="thead-light">
               <tr>
+                <th scope="col">Manage</th>
                 <th scope="col">ID</th>
                 <th scope="col">Name Product</th>
                 <th scope="col">Image</th>
@@ -61,6 +64,7 @@ class Product extends Component {
           </table>
           </div>
           </div>
+          <Add />
           </Fragment>
         );
     }

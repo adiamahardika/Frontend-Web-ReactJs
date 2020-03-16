@@ -5,6 +5,10 @@ const Item = ({ product, parseToRupiah}) => {
     return(
     <Fragment>
     <tr>
+    <td class='manage'>
+        <button type="button" class="btn btn-sm btn-primary">Edit</button>
+        <button type="button" class="btn btn-sm btn-primary">Delete</button>
+    </td>
     <td class='item'>{product.id}</td>
     <td class='item'>{product.name_product}</td>
     <td class='item'><img src={product.image}alt={product.image} style={{ maxHeight: 50 }}/></td>

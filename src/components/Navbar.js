@@ -12,48 +12,10 @@ class Navbar extends Component {
     }
 
     componentDidMount() {
-        localStorage.setItem('id', 1);
+        // localStorage.setItem('id', 1);
     }
 
     render() {
-        const CheckMenu = () => {
-            if(localStorage.getItem('id') == 1) {
-                return(
-                <div class="col-lg-10">
-                </div>
-                )
-            } else {
-                return (
-                <div class="col-lg-10">
-                <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                <ul class="navbar-nav">
-                    <li class="nav-item active">
-                    <Link class="nav-link" to="#">Home 
-                    <span class="sr-only">(current)</span>
-                    </Link>
-                    </li>
-                    <li class="nav-item">
-                    <Link class="nav-link" to="#">Features</Link>
-                    </li>
-                    <li class="nav-item">
-                    <Link class="nav-link" to="#">Pricing</Link>
-                    </li>
-                    <li class="nav-item dropdown">
-                    <Link class="nav-link dropdown-toggle" to="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Dropdown link
-                    </Link>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <Link class="dropdown-item" to="#">Action</Link>
-                        <Link class="dropdown-item" to="#">Another action</Link>
-                        <Link class="dropdown-item" to="#">Something else here</Link>
-                    </div>
-                    </li>
-                </ul>
-                </div>
-                </div>
-                )
-            }
-        }
         return (
                 <nav class='navbar sticky-top navbar-expand-lg' style={{ background: 'white' }}>
                 <div class='container'>
@@ -65,7 +27,36 @@ class Navbar extends Component {
                 <span class="navbar-toggler-icon"></span>
                 </button>
                 </div>
-                <CheckMenu />
+                <div class="col-lg-10">
+                    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav">
+                        <li class="nav-item active">
+                        <Link class="nav-link" to="/product">Product 
+                        <span class="sr-only">(current)</span>
+                        </Link>
+                        </li>
+                        <li class="nav-item">
+                        <Link class="nav-link" to="/category">Category</Link>
+                        </li>
+                        <li class="nav-item">
+                        <Link class="nav-link" to="/account">User</Link>
+                        </li>
+                        <li class="nav-item dropdown">
+                        <Link class="nav-link dropdown-toggle" to="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Place
+                        </Link>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <Link class="dropdown-item" to="/province">Province</Link>
+                            <Link class="dropdown-item" to="/city">City</Link>
+                            <Link class="dropdown-item" to="/sub-city">Sub-City</Link>
+                        </div>
+                        </li>
+                        <li class="nav-item">
+                        <Link class="nav-link" to="#">History Order</Link>
+                        </li>
+                    </ul>
+                    </div>
+                    </div>
                 </div>
             </nav>
         );

@@ -25,7 +25,7 @@ class Login extends Component {
     onSubmit = (event) => {
         event.preventDefault();
         axios
-            .post(`http://localhost:4111/account/login`, this.state)
+            .post(`${process.env.REACT_APP_URL}account/login`, this.state)
             .then(res => {
                 localStorage.setItem('token', res.data.result.token);
                 localStorage.setItem('id', res.data.result.id);

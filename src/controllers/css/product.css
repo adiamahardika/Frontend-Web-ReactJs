@@ -18,12 +18,33 @@ body {
 }
 .row{
   margin-top: 20px;
-  margin-bottom: 20px
+  margin-bottom: 20px;
+  display: flex;
 }
 .item {
-  min-width: 100px;
+  min-width: 150px;
 }
 
 .desc {
   min-width: 400px;
+}
+.manage{
+  min-width: 250px;
+}
+
+.modal-header{
+  color: black;
+  font-family: "MaisonNeue-Book", sans-serif;
+  font-size: 20px;
+}
+
+.modal-body{
+color: black;
+font-family: "MaisonNeue-Book", sans-serif;
+font-size: 20px;
+}
+
+
+.badge{
+  color: #56ab2f;
 }
