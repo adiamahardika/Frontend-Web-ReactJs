@@ -1,28 +1,34 @@
 import React, { Component, Fragment } from 'react';
 import "./css/account.css";
 import {connect} from 'react-redux';
-import {readAccount} from '../redux/actions/account';
+import { readAccount } from '../redux/actions/account';
 import { withRouter } from 'react-router-dom';
 import Item from '../components/modal/account/Item';
 import Navbar from "../components/Navbar";
 import Add from "../components/modal/account/Add";
+import Delete from "../components/modal/account/Delete";
 import Edit from "../components/modal/account/Edit";
-
 class Account extends Component {
     state = {
+        selectAccountDelete:[],
         selectAccountEdit:[]
     }
     componentDidMount(){
         this.props.dispatch(readAccount())
     }
-    onselectAccountEdit = (account) => {
+    onSelectAccountDelete = (account) => {
+        this.setState({
+            selectAccountDelete: account
+        })
+    }
+    onSelectAccountEdit = (account) => {
         this.setState({
             selectAccountEdit: account
         })
     }
     render() {
         const {accounts} = this.props
-        const listAccount = accounts.map((account, index)=> <Item key={index} account={account} onselectAccountEdit={this.onselectAccountEdit}/>)
+        const listAccount = accounts.map((account, index)=> <Item key={index} account={account} onSelectAccountEdit={this.onSelectAccountEdit}onSelectAccountDelete={this.onSelectAccountDelete}/>)
         return (
             <Fragment>
             <Navbar/>
@@ -63,7 +69,9 @@ class Account extends Component {
           </div>
           </div>
           <Add/>
-          <Edit account={this.state.selectAccountEdit}/>
+          <Edit account={this.state.selectAccountEdit}
+          />
+          <Delete account={this.state.selectAccountDelete}/>
             </Fragment>
         );
     }
