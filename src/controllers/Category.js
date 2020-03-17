@@ -44,7 +44,7 @@ class Category extends Component {
               <button class="btn btn-md btn-success" data-toggle='modal' data-target='#createModal' style={{borderRadius:25, fontSize:'12px', color:'white'}}>ADD CATEGORY</button>
               </div>
             </div>
-            <div className="row">
+            <div className="row" style={{marginLeft: "125px"}}>
             <table className="table table-bordered table-hover table-responsive">
             <thead className="thead-light">
               <tr>

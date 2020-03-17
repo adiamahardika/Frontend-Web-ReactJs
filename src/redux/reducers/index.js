@@ -2,10 +2,10 @@ import { combineReducers } from 'redux';
 
 import products from './products';
 import category from './category'
-import user from './user'
+import account from './account'
 
 export default combineReducers({
     products,
     category,
-    user
+    account,
 });

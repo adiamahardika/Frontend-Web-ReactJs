@@ -37,9 +37,21 @@ class Edit extends Component {
         })
     }
     onChangeImage = event => {
-        this.setState({
-            [event.target.name]: event.target.files[0]
-        })
+      const image = event.target.files[0]
+      if (image.size > 1024 * 1024 * 3)
+      return alert('Cannot upload image with size more than 3MB')
+      const imageArray = image.name.split(".");
+      const imageExtension = imageArray[imageArray.length - 1].toLowerCase();
+      if (
+      imageExtension !== "png" &&
+      imageExtension !== "jpg" &&
+      imageExtension !== "jpeg" &&
+      imageExtension !== "gif"
+      )
+      return alert("Cannot upload file except image!")
+      this.setState({
+          image:image
+      })
     }
     updateProduct = async (event) => {
         event.preventDefault();

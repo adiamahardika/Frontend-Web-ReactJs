@@ -21,7 +21,6 @@ class Add extends Component {
         this.setState({
             [event.target.name]: event.target.value
         })
-        console.log(this.state)
     }
     onChangeImage = event => {
       const image = event.target.files[0]
@@ -55,7 +54,7 @@ class Add extends Component {
         data.append("id_product_group", this.state.id_product_group);
 
         await this.props.dispatch(createProduct(data));
-        this.props.history.push('/product')
+        this.props.history.push('/product');
     }
     componentDidMount () {
       this.props.dispatch(readCategory())
