@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import {connect} from 'react-redux'
 import { createProduct } from '../../../redux/actions/product'
+import { readCategory } from '../../../redux/actions/category'
 import '../../../controllers/css/product.css'
 import {withRouter} from 'react-router-dom'
 class Add extends Component {
@@ -22,8 +23,20 @@ class Add extends Component {
         })
     }
     onChangeImage = event => {
+      const image = event.target.files[0]
+        if (image.size > 1024 * 1024 * 3)
+        return alert('Cannot upload image with size more than 3MB')
+        const imageArray = image.name.split(".");
+        const imageExtension = imageArray[imageArray.length - 1].toLowerCase();
+        if (
+        imageExtension !== "png" &&
+        imageExtension !== "jpg" &&
+        imageExtension !== "jpeg" &&
+        imageExtension !== "gif"
+        )
+        return alert("Cannot upload file except image!")
         this.setState({
-            [event.target.name]:event.target.files[0]
+            image:image
         })
     }
     createProduct = async (event) => {
@@ -43,8 +56,12 @@ class Add extends Component {
         await this.props.dispatch(createProduct(data));
         this.props.history.push('/product')
     }
+    componentDidMount () {
+      this.props.dispatch(readCategory())
+    }
 
     render(){
+      const {categorys} = this.props
         return(
             <div class="modal fade" id="createModal" tabindex="-1" role="dialog" aria-labelledby="createModalLabel" aria-hidden="true" >
             <div class="modal-dialog" role="document" >
@@ -59,7 +76,7 @@ class Add extends Component {
                       <form >
                         <div class='form-group'>
                           <label htmlFor='productId' class='col-form-label'>Nama Product: </label>
-                          <input name='name_product' id='productId' type='text' class='form-control' onChange={this.onChangeValue} placeholder='Insert Name Product...' required/>
+                          <input name='name_product' type='text' class='form-control' onChange={this.onChangeValue} placeholder='Insert Name Product...' required/>
                         </div>
                         <div class='form-group'>
                           <label class='col-form-label'> Image: </label>
@@ -67,35 +84,41 @@ class Add extends Component {
                         </div>
                         <div class='form-group'>
                           <label htmlFor='productId' class='col-form-label'>Card Description: </label>
-                          <input name='cardDesc' id='productId' type='text' class='form-control' onChange={this.onChangeValue} placeholder='Insert Card Description...' required/>
+                          <input name='cardDesc' type='text' class='form-control' onChange={this.onChangeValue} placeholder='Insert Card Description...' required/>
                         </div>
                         <div class='form-group'>
                           <label htmlFor='productId' class='col-form-label'>Short Description: </label>
-                          <input name='shortDesc' id='productId' type='text' class='form-control' onChange={this.onChangeValue} placeholder='Insert Short Description...' required/>
+                          <input name='shortDesc' type='text' class='form-control' onChange={this.onChangeValue} placeholder='Insert Short Description...' required/>
                         </div>
                         <div class='form-group'>
                           <label htmlFor='productId' class='col-form-label'>Long Description: </label>
-                          <input name='longDesc' id='productId' type='text' class='form-control' onChange={this.onChangeValue} placeholder='Insert Long Description...' required/>
+                          <input name='longDesc' type='text' class='form-control' onChange={this.onChangeValue} placeholder='Insert Long Description...' required/>
                         </div>
                         <div class='form-group'>
                           <label htmlFor='productId' class='col-form-label'>Ingredients: </label>
-                          <input name='ingredients' id='productId' type='text' class='form-control' onChange={this.onChangeValue} placeholder='Insert Ingredients Description...' required/>
+                          <input name='ingredients' type='text' class='form-control' onChange={this.onChangeValue} placeholder='Insert Ingredients Description...' required/>
                         </div>
                         <div class='form-group'>
                           <label htmlFor='productId' class='col-form-label'>Quantity: </label>
-                          <input name='quantity' id='productId' type='number' class='form-control' onChange={this.onChangeValue} placeholder='Insert Product Quantity...'required />
+                          <input name='quantity' type='number' class='form-control' onChange={this.onChangeValue} placeholder='Insert Product Quantity...'required />
                         </div>
                         <div class='form-group'>
                           <label htmlFor='productId' class='col-form-label'>Price: </label>
-                          <input name='price' id='productId' type='number' class='form-control' onChange={this.onChangeValue} placeholder='Insert Product Price...' required/>
+                          <input name='price' type='number' class='form-control' onChange={this.onChangeValue} placeholder='Insert Product Price...' required/>
                         </div>
                         <div class='form-group'>
                           <label htmlFor='productId' class='col-form-label'>Category: </label>
-                          <input name='id_category' id='productId' type='number' class='form-control' onChange={this.onChangeValue} placeholder='Insert Product Category...' required/>
+                          <select class="custom-select" name='id_category' onChange={this.onChangeValue}>
+                          <option selected>Choose...</option>
+                          {categorys.map((category,index) => 
+                            <option key={index} value={category.id} >{category.name}</option>
+                            )}
+                        </select>
+                          {/* <input name='id_category' type='number' class='form-control' onChange={this.onChangeValue} required/> */}
                         </div>
                         <div class='form-group'>
                           <label htmlFor='productId' class='col-form-label'>Group: </label>
-                          <input name='id_product_group' id='productId' type='number' class='form-control' onChange={this.onChangeValue} placeholder='Insert Product Group...' required/>
+                          <input name='id_product_group' type='number' class='form-control' onChange={this.onChangeValue} placeholder='Insert Product Group...' required/>
                         </div>
                       </form>
                     </div>
@@ -109,4 +132,10 @@ class Add extends Component {
         )
     }
 }
-export default withRouter(connect()(Add))
+const mapStateToProps = (state) => {
+  console.log(state)
+      return {
+          categorys: state.category.categorys
+      }
+  }
+export default withRouter(connect(mapStateToProps)(Add))
