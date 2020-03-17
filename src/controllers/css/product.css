@@ -21,7 +21,9 @@ body {
   color: #ffffff;
   border-color: white;
   font-size: medium;
-  font-style: inherit;
+}
+.table-bordered{
+  border: none;
 }
 .row{
   margin-top: 20px;
@@ -29,7 +31,7 @@ body {
   display: flex;
 }
 .item {
-  min-width: 150px;
+  max-width: 150px;
 }
 
 .desc {

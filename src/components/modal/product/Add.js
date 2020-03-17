@@ -21,6 +21,7 @@ class Add extends Component {
         this.setState({
             [event.target.name]: event.target.value
         })
+        console.log(this.state)
     }
     onChangeImage = event => {
       const image = event.target.files[0]
@@ -73,58 +74,71 @@ class Add extends Component {
                     </button>
                 </div>
                 <div class='modal-body' align='left'>
-                      <form >
+                      <form class="needs-validation" novalidate>
                         <div class='form-group'>
-                          <label htmlFor='productId' class='col-form-label'>Nama Product: </label>
-                          <input name='name_product' type='text' class='form-control' onChange={this.onChangeValue} placeholder='Insert Name Product...' required/>
+                        <div class="col-md-4 mb-3">
+                        <label for="validationCustom01">First name</label>
+                        <input type="text" class="form-control" id="validationCustom01" required/>
+                        <div class="valid-feedback">
+                          Looks good!
                         </div>
-                        <div class='form-group'>
+                      </div>
+                          <div>
+                          <label for='validationCustom01' class='col-form-label'>Nama Product: </label>
+                          <input name='name_product' type='text' class='form-control'
+                          id="validationCustom01" onChange={this.onChangeValue} placeholder='Insert Name Product...' required/>
+                          <div class="valid-feedback">
+                            Looks good!
+                          </div>
+                        </div>
+                        <div>
                           <label class='col-form-label'> Image: </label>
                           <input type='file' name='image' class='form-control' onChange={this.onChangeImage} required/>
                         </div>
-                        <div class='form-group'>
+                        <div>
                           <label htmlFor='productId' class='col-form-label'>Card Description: </label>
                           <input name='cardDesc' type='text' class='form-control' onChange={this.onChangeValue} placeholder='Insert Card Description...' required/>
                         </div>
-                        <div class='form-group'>
+                        <div>
                           <label htmlFor='productId' class='col-form-label'>Short Description: </label>
                           <input name='shortDesc' type='text' class='form-control' onChange={this.onChangeValue} placeholder='Insert Short Description...' required/>
                         </div>
-                        <div class='form-group'>
+                        <div>
                           <label htmlFor='productId' class='col-form-label'>Long Description: </label>
                           <input name='longDesc' type='text' class='form-control' onChange={this.onChangeValue} placeholder='Insert Long Description...' required/>
                         </div>
-                        <div class='form-group'>
+                        <div>
                           <label htmlFor='productId' class='col-form-label'>Ingredients: </label>
                           <input name='ingredients' type='text' class='form-control' onChange={this.onChangeValue} placeholder='Insert Ingredients Description...' required/>
                         </div>
-                        <div class='form-group'>
+                        <div>
                           <label htmlFor='productId' class='col-form-label'>Quantity: </label>
                           <input name='quantity' type='number' class='form-control' onChange={this.onChangeValue} placeholder='Insert Product Quantity...'required />
                         </div>
-                        <div class='form-group'>
+                        <div>
                           <label htmlFor='productId' class='col-form-label'>Price: </label>
                           <input name='price' type='number' class='form-control' onChange={this.onChangeValue} placeholder='Insert Product Price...' required/>
                         </div>
-                        <div class='form-group'>
+                        <div>
                           <label htmlFor='productId' class='col-form-label'>Category: </label>
-                          <select class="custom-select" name='id_category' onChange={this.onChangeValue}>
-                          <option selected>Choose...</option>
+                          <select class="custom-select" name='id_category' onChange={this.onChangeValue} required>
+                          <option selected disabled>Choose...</option>
                           {categorys.map((category,index) => 
-                            <option key={index} value={category.id} >{category.name}</option>
+                            <option key={index} value={category.id}>{category.name_category}</option>
                             )}
                         </select>
                           {/* <input name='id_category' type='number' class='form-control' onChange={this.onChangeValue} required/> */}
                         </div>
-                        <div class='form-group'>
+                        <div>
                           <label htmlFor='productId' class='col-form-label'>Group: </label>
                           <input name='id_product_group' type='number' class='form-control' onChange={this.onChangeValue} placeholder='Insert Product Group...' required/>
+                        </div>
                         </div>
                       </form>
                     </div>
                 <div class="modal-footer">
                 <button style={{borderRadius:25}} type="button" class="btn btn-md btn-outline-success" data-dismiss="modal">CANCEL</button>
-                <button onClick={this.createProduct} style={{borderRadius:25}} type="submit" class="btn" class="btn btn-md btn-success" data-dismiss='modal' >ADD</button>
+                <button onClick={this.createProduct} style={{borderRadius:25}} type="submit" class="btn" class="btn btn-md btn-success" data-dismiss="modal">ADD</button>
                 </div>
                 </div>
             </div>
@@ -133,9 +147,8 @@ class Add extends Component {
     }
 }
 const mapStateToProps = (state) => {
-  console.log(state)
-      return {
-          categorys: state.category.categorys
-      }
+  return {
+    categorys: state.category.categorys
   }
+}
 export default withRouter(connect(mapStateToProps)(Add))

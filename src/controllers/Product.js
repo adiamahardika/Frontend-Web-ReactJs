@@ -1,8 +1,8 @@
 import React, { Component, Fragment } from 'react';
 import "./css/product.css";
 import {connect} from 'react-redux'
-import {readProduct, createProduct} from '../redux/actions/product'
-import { withRouter } from "react-router"
+import {readProduct} from '../redux/actions/product'
+import { withRouter } from "react-router-dom"
 import Item from '../components/modal/product/Item'
 import Navbar from "../components/Navbar"
 import Add from "../components/modal/product/Add"
@@ -36,6 +36,7 @@ class Product extends Component {
 	  for(var i = 0; i < numberrev.length; i++) if(i%3 === 0) rupiah += numberrev.substr(i,3)+'.'
 	  return 'Rp. '+rupiah.split('',rupiah.length-1).reverse().join('')
     }
+    
     render() {
     const { products } = this.props
     const listproduct = products.map((product, index) => <Item key={index} product={product} parseToRupiah={this.parseToRupiah} onSelectProductEdit={this.onSelectProductEdit} onSelectProductDelete={this.onSelectProductDelete}/>);
