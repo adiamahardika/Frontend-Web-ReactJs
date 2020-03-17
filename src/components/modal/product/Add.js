@@ -59,7 +59,7 @@ class Add extends Component {
                       <form >
                         <div class='form-group'>
                           <label htmlFor='productId' class='col-form-label'>Nama Product: </label>
-                          <input name='name_product' id='productId' type='text' class='form-control' onChange={this.onChangeValue} placeholder='Insert Name Product...' required/>
+                          <input name='name_product' type='text' class='form-control' onChange={this.onChangeValue} placeholder='Insert Name Product...' required/>
                         </div>
                         <div class='form-group'>
                           <label class='col-form-label'> Image: </label>
@@ -67,35 +67,35 @@ class Add extends Component {
                         </div>
                         <div class='form-group'>
                           <label htmlFor='productId' class='col-form-label'>Card Description: </label>
-                          <input name='cardDesc' id='productId' type='text' class='form-control' onChange={this.onChangeValue} placeholder='Insert Card Description...' required/>
+                          <input name='cardDesc' type='text' class='form-control' onChange={this.onChangeValue} placeholder='Insert Card Description...' required/>
                         </div>
                         <div class='form-group'>
                           <label htmlFor='productId' class='col-form-label'>Short Description: </label>
-                          <input name='shortDesc' id='productId' type='text' class='form-control' onChange={this.onChangeValue} placeholder='Insert Short Description...' required/>
+                          <input name='shortDesc' type='text' class='form-control' onChange={this.onChangeValue} placeholder='Insert Short Description...' required/>
                         </div>
                         <div class='form-group'>
                           <label htmlFor='productId' class='col-form-label'>Long Description: </label>
-                          <input name='longDesc' id='productId' type='text' class='form-control' onChange={this.onChangeValue} placeholder='Insert Long Description...' required/>
+                          <input name='longDesc' type='text' class='form-control' onChange={this.onChangeValue} placeholder='Insert Long Description...' required/>
                         </div>
                         <div class='form-group'>
                           <label htmlFor='productId' class='col-form-label'>Ingredients: </label>
-                          <input name='ingredients' id='productId' type='text' class='form-control' onChange={this.onChangeValue} placeholder='Insert Ingredients Description...' required/>
+                          <input name='ingredients' type='text' class='form-control' onChange={this.onChangeValue} placeholder='Insert Ingredients Description...' required/>
                         </div>
                         <div class='form-group'>
                           <label htmlFor='productId' class='col-form-label'>Quantity: </label>
-                          <input name='quantity' id='productId' type='number' class='form-control' onChange={this.onChangeValue} placeholder='Insert Product Quantity...'required />
+                          <input name='quantity' type='number' class='form-control' onChange={this.onChangeValue} placeholder='Insert Product Quantity...'required />
                         </div>
                         <div class='form-group'>
                           <label htmlFor='productId' class='col-form-label'>Price: </label>
-                          <input name='price' id='productId' type='number' class='form-control' onChange={this.onChangeValue} placeholder='Insert Product Price...' required/>
+                          <input name='price' type='number' class='form-control' onChange={this.onChangeValue} placeholder='Insert Product Price...' required/>
                         </div>
                         <div class='form-group'>
                           <label htmlFor='productId' class='col-form-label'>Category: </label>
-                          <input name='id_category' id='productId' type='number' class='form-control' onChange={this.onChangeValue} placeholder='Insert Product Category...' required/>
+                          <input name='id_category' type='number' class='form-control' onChange={this.onChangeValue} placeholder='Insert Product Category...' required/>
                         </div>
                         <div class='form-group'>
                           <label htmlFor='productId' class='col-form-label'>Group: </label>
-                          <input name='id_product_group' id='productId' type='number' class='form-control' onChange={this.onChangeValue} placeholder='Insert Product Group...' required/>
+                          <input name='id_product_group' type='number' class='form-control' onChange={this.onChangeValue} placeholder='Insert Product Group...' required/>
                         </div>
                       </form>
                     </div>

@@ -6,6 +6,56 @@ body {
 
 body {
   background-color: #ffffff;
-  font-family: "Consolas", sans-serif;
+  font-family: "MaisonNeue-Book", sans-serif;
   /* background-image: url(/Login.jpg); */
+}
+.table{
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-family: "MaisonNeue-Book", sans-serif;
+  text-align: center;
+  margin-left: auto;
+}
+.table .thead-light th{
+  background-color: #56ab2f;
+  color: #ffffff;
+  border-color: white;
+  font-size: medium;
+  font-style: inherit;
+}
+.table-bordered{
+  border: none;
+}
+.row{
+  margin-top: 20px;
+  margin-bottom: 20px;
+  display: flex;
+}
+.item {
+  min-width: 300px;
+}
+
+.manage{
+  min-width: 250px;
+}
+
+.modal-header{
+  background-color: #56ab2f;
+  color: white;
+  font-family: "MaisonNeue-Book", sans-serif;
+  font-size: 20px;
+}
+
+.modal-body{
+color: black;
+font-family: "MaisonNeue-Book", sans-serif;
+font-size: 20px;
+}
+.btn-success{
+  background-color:#56ab2f !important;
+  border: none;
+}
+.btn-outline-success{
+  border: 2px solid #56ab2f !important;
+  color: #56ab2f !important;
 }

@@ -18,7 +18,6 @@ class Edit extends Component {
         id_product_group:"",
     }
     componentWillReceiveProps = ({ product }) => {
-      console.log(product)
         this.setState({
             productId: product.id,
             name_product: product.name_product,
