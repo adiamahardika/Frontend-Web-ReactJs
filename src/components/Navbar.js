@@ -8,11 +8,8 @@ class Navbar extends Component {
     onLogout() {
         localStorage.removeItem('id');
         localStorage.removeItem('token');
+        localStorage.removeItem('role');
         this.props.history.push('/login');
-    }
-
-    componentDidMount() {
-        // localStorage.setItem('id', 1);
     }
 
     render() {

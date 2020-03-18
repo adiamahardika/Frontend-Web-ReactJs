@@ -1,8 +1,12 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import {createAccount} from '../../../redux/actions/account'
+import {readProvince} from '../../../redux/actions/province'
+import {readCity} from '../../../redux/actions/city'
+import {readSubCity} from '../../../redux/actions/subCity'
 import '../../../controllers/css/account.css'
 import {withRouter} from 'react-router-dom'
+import province from '../../../redux/reducers/province'
 
 class Add extends Component {
     state = {
@@ -59,7 +63,13 @@ class Add extends Component {
         await this.props.dispatch(createAccount(data));
         this.props.history.push('/account');
     }
+    componentDidMount () {
+      this.props.dispatch(readProvince())
+      this.props.dispatch(readCity())
+      this.props.dispatch(readSubCity())
+    }
     render(){
+      const {provinces, cities, subCities} = this.props
         return(
             <div class="modal fade" id="createModal" tabindex="-1" role="dialog" aria-labelledby="createModalLabel" aria-hidden="true" >
             <div class="modal-dialog" role="document" >
@@ -90,23 +100,41 @@ class Add extends Component {
                         </div>
                         <div>
                           <label for='validationCustom01' class='col-form-label'>Password: </label>
-                          <input name='last_name' type='password' class='form-control'
+                          <input name='password' type='password' class='form-control'
                           id="validationCustom01" onChange={this.onChangeValue} required/>
                         </div>
                         <div>
                           <label for='validationCustom01' class='col-form-label'>Provinsi: </label>
-                          <input name='id_province' type='text' class='form-control'
-                          id="validationCustom01" onChange={this.onChangeValue} required/>
+                          <select class="custom-select" name='id_province' onChange={this.onChangeValue} required>
+                          <option selected disabled>Choose...</option>
+                          {provinces.map((province,index) => 
+                            <option key={index} value={province.id}>{province.name_province}</option>
+                            )}
+                        </select>
+                          {/* <input name='id_province' type='text' class='form-control'
+                          id="validationCustom01" onChange={this.onChangeValue} required/> */}
                         </div>
                         <div>
                           <label for='validationCustom01' class='col-form-label'>Kota: </label>
-                          <input name='id_city' type='text' class='form-control'
-                          id="validationCustom01" onChange={this.onChangeValue} required/>
+                          <select class="custom-select" name='id_city' onChange={this.onChangeValue} required>
+                          <option selected disabled>Choose...</option>
+                          {cities.map((city,index) => 
+                            <option key={index} value={city.id}>{city.name_city}</option>
+                            )}
+                        </select>
+                          {/* <input name='id_city' type='text' class='form-control'
+                          id="validationCustom01" onChange={this.onChangeValue} required/> */}
                         </div>
                         <div>
                           <label for='validationCustom01' class='col-form-label'>Kecamatan: </label>
-                          <input name='id_sub_city' type='text' class='form-control'
-                          id="validationCustom01" onChange={this.onChangeValue} required/>
+                          <select class="custom-select" name='id_sub_city' onChange={this.onChangeValue} required>
+                          <option selected disabled>Choose...</option>
+                          {subCities.map((subCity,index) => 
+                            <option key={index} value={subCity.id}>{subCity.name_sub_city}</option>
+                            )}
+                        </select>
+                          {/* <input name='id_sub_city' type='text' class='form-control'
+                          id="validationCustom01" onChange={this.onChangeValue} required/> */}
                         </div>
                         <div>
                           <label for='validationCustom01' class='col-form-label'>Alamat: </label>
@@ -124,8 +152,13 @@ class Add extends Component {
                         </div>
                         <div>
                           <label for='validationCustom01' class='col-form-label'>Status: </label>
-                          <input name='role' type='text' class='form-control'
-                          id="validationCustom01" onChange={this.onChangeValue} required/>
+                          <select class="custom-select" name='role' onChange={this.onChangeValue} required>
+                          <option selected disabled>Choose...</option>
+                          <option value={'admin'}>Admin</option>
+                          <option value={'member'}>Member</option>
+                        </select>
+                          {/* <input name='role' type='text' class='form-control'
+                          id="validationCustom01" onChange={this.onChangeValue} required/> */}
                         </div>
                         </div>
                       </form>
@@ -140,4 +173,11 @@ class Add extends Component {
         )
     }
 }
-export default withRouter(connect()(Add))
+const mapStateToProps = (state) => {
+  return {
+    provinces: state.province.provinces,
+    cities: state.city.cities,
+    subCities: state.subCity.subCities
+  }
+}
+export default withRouter(connect(mapStateToProps)(Add))

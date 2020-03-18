@@ -26,13 +26,14 @@ class City extends Component {
               <button class="btn btn-md btn-success" data-toggle='modal' data-target='#createModal' style={{borderRadius:25, fontSize:'12px', color:'white'}}>ADD CATEGORY</button>
               </div>
             </div>
-            <div className="row" style={{marginLeft: "125px"}}>
+            <div className="row">
             <table className="table table-bordered table-hover table-responsive">
             <thead className="thead-light">
               <tr>
                 <th scope="col">Manage</th>
                 <th scope="col">ID</th>
-                <th scope="col">Name Category</th> 
+                <th scope="col">Name City</th>
+                <th scope="col">Name Province</th> 
               </tr>
             </thead>
             <tbody>

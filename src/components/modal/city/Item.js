@@ -10,6 +10,7 @@ const Item = ({ city }) => {
     </td>
     <td class='item'>{city.id}</td>
     <td class='item'>{city.name_city}</td>
+    <td class='item'>{city.name_province}</td>
     </tr>
         </Fragment>
     )
