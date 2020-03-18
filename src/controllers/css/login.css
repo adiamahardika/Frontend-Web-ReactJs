@@ -1,7 +1,14 @@
-.header{
+.backgroundMakyur{
+  background-size: cover;
+  position: absolute;
+  background-repeat: no-repeat;
+  max-width: 100%;
+  max-height: 100%;
+  margin-left: 100px;
+}
+.card-body{
     text-align: center;
-    position: relative;
-    margin-top: auto;
+    background-color: transparent;
 }
 .logoMakyur{
  height: 75px;
@@ -9,13 +16,28 @@
 
 .card {
   background-color: #ffffff;
-  font-family: "MaisonNeue-Book", sans-serif;
-  position: relative;
+  font-family: open sans,tahoma,sans-serif;
+  position: absolute;
   display: block;
   width: 368px;
-  margin: 0 auto;
-  padding: 40px 32px 12px;
+  margin-top: 150px;
+  margin-left: 150px;
+  padding: 10px 32px 12px;
   background-color: #ffffff;
-  margin-top: auto;
+  border-radius: 12px;
   /* background-image: url(/Login.jpg); */
+}
+
+.container{
+  text-align: left;
+}
+
+.form-control{
+  font-family: open sans,tahoma,sans-serif;
+  font-size: 14px;
+}
+
+.btn-success{
+  background-color:#56ab2f !important;
+  border: none;
 }
