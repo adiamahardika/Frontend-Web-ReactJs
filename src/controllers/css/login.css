@@ -1,0 +1,21 @@
+.header{
+    text-align: center;
+    position: relative;
+    margin-top: auto;
+}
+.logoMakyur{
+ height: 75px;
+}
+
+.card {
+  background-color: #ffffff;
+  font-family: "MaisonNeue-Book", sans-serif;
+  position: relative;
+  display: block;
+  width: 368px;
+  margin: 0 auto;
+  padding: 40px 32px 12px;
+  background-color: #ffffff;
+  margin-top: auto;
+  /* background-image: url(/Login.jpg); */
+}

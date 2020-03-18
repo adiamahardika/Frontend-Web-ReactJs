@@ -14,8 +14,8 @@ class Product extends Component {
       selectProductEdit: []
     }
     componentDidMount(){
-        // if(!localStorage.getItem('token'))
-        //     this.props.history.push('/login')
+        if(!localStorage.getItem('token'))
+            this.props.history.push('/login')
         this.props.dispatch(readProduct())
     }
     onSelectProductDelete = (product) => {

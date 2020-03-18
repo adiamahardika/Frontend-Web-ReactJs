@@ -1,4 +1,4 @@
-*,
+
 body {
   margin: 0;
   padding: 0;
@@ -6,7 +6,7 @@ body {
 
 body {
   background-color: #ffffff;
-  font-family: "Consolas", sans-serif;
+  font-family: "MaisonNeue-Book", sans-serif;
   /* background-image: url(/Login.jpg); */
 }
 

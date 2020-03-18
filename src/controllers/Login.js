@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import './css/login.css';
+import Logo from '../images/logo-makyur-06.png'
 require ('dotenv').config();
-
 class Login extends Component {
     constructor(props) {
         super(props);
@@ -39,20 +40,26 @@ class Login extends Component {
 
     render() {
         return (
-            <div className="container">
-                <h4 style={{ marginTop: 50, marginLeft: 520 }}>Login</h4>
-                <div className="row justify-content-md-center">
-                    <div className="col-md-8">
+            <div>
+            <header class='header'>
+    <img src={Logo} class="logoMakyur d-inline-block align-top" alt="logo-makyur.png" />          
+            </header>
+            <div class="card">
+            <div class="card-body">
+            <div class="container">
+                <h4>Login</h4>
+                <div class="row justify-content-md-center">
+                    <div class="col-md-12">
                         <form onSubmit={this.onSubmit}>
-                            <div className="form-group">
+                            <div class="form-group">
                                 <label>Email</label>
-                                <input type="text" className="form-control" placeholder="Enter email" name="email" onChange={this.onChange} />
+                                <input type="text" class="form-control" placeholder="ex: youremail@mail.com" name="email" onChange={this.onChange} />
                             </div>
-                            <div className="form-group">
+                            <div class="form-group">
                                 <label>Password</label>
-                                <input type="password" className="form-control" placeholder="Enter password" name="password" onChange={this.onChange} />
+                                <input type="password" class="form-control" placeholder="Enter password" name="password" onChange={this.onChange} />
                             </div>
-                            <button type="submit" className="btn btn-primary" style={{
+                            <button type="submit" class="btn btn-primary" style={{
                                 backgroundColor: '#f0bbcb!important',
                                 color: "white",
                                 width: "100%",
@@ -60,6 +67,9 @@ class Login extends Component {
                         </form>
                     </div>
                 </div>
+            </div>
+            </div>
+            </div>
             </div>
         )
     }
