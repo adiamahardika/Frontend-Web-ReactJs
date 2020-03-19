@@ -68,7 +68,7 @@ class Product extends Component {
       this.props.dispatch(readProduct(this.state.category, this.state.product, event.target.value, this.state.paginateId))
     }
     componentDidMount(){
-      if(!localStorage.getItem('token'))
+      if(!localStorage.getItem('token') && localStorage.getItem('role') != 'admin')
           this.props.history.push('/login')
       this.props.dispatch(readProduct())
       var id = querystring.parse(this.props.location.search);
