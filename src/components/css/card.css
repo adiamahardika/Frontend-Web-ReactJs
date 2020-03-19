@@ -1,0 +1,18 @@
+.jumbotron{
+    background-image: url(../../images/kuy.png);
+    width: 100% !important;
+    height: 100vh ;
+    background-repeat: no-repeat;
+    background-color: white;
+    box-shadow: none;
+    background-size: cover;
+}
+
+.middle{
+    background-color: white;
+    padding: 20px;
+    text-align: center;
+    border-radius: 20px;
+    margin-top: 80px;
+
+}
