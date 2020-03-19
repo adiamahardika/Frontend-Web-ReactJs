@@ -75,13 +75,6 @@ class Add extends Component {
                 <div class='modal-body' align='left'>
                       <form class="needs-validation" novalidate>
                         <div class='form-group'>
-                        <div class="col-md-4 mb-3">
-                        <label for="validationCustom01">First name</label>
-                        <input type="text" class="form-control" id="validationCustom01" required/>
-                        <div class="valid-feedback">
-                          Looks good!
-                        </div>
-                      </div>
                           <div>
                           <label for='validationCustom01' class='col-form-label'>Nama Product: </label>
                           <input name='name_product' type='text' class='form-control'
@@ -126,11 +119,14 @@ class Add extends Component {
                             <option key={index} value={category.id}>{category.name_category}</option>
                             )}
                         </select>
-                          {/* <input name='id_category' type='number' class='form-control' onChange={this.onChangeValue} required/> */}
                         </div>
                         <div>
                           <label htmlFor='productId' class='col-form-label'>Group: </label>
-                          <input name='id_product_group' type='number' class='form-control' onChange={this.onChangeValue} placeholder='Insert Product Group...' required/>
+                          <select class="custom-select" name='id_product_group' onChange={this.onChangeValue} required>
+                          <option selected disabled>Choose...</option>
+                          <option value='1'>Import</option>
+                          <option value='2'>Lokal</option>
+                        </select>
                         </div>
                         </div>
                       </form>

@@ -19,7 +19,7 @@ class Navbar extends Component {
                     <nav class='navbar sticky-top navbar-expand-lg' style={{ background: 'white' }}>
                 <div class='container'>
                 <div class="col-lg-2">
-                <Link class="navbar-brand" to="#">
+                <Link class="navbar-brand" to="/product">
                 <img src={Logo} height="70" class="d-inline-block align-top" alt=""/>
                 </Link>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -72,7 +72,7 @@ class Navbar extends Component {
                     <nav class='navbar sticky-top navbar-expand-lg' style={{ background: 'white' }}>
                 <div class='container'>
                 <div class="col-lg-2">
-                <Link class="navbar-brand" to="#">
+                <Link class="navbar-brand" to="/">
                 <img src={Logo} height="70" class="d-inline-block align-top" alt=""/>
                 </Link>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">

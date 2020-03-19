@@ -14,6 +14,8 @@ class Category extends Component {
       selectCategoryDelete: []
     }
     componentDidMount(){
+      if(!localStorage.getItem('token'))
+            this.props.history.push('/login')
         this.props.dispatch(readCategory())
     }
 
@@ -36,7 +38,7 @@ class Category extends Component {
             <Navbar />
             <div className="container">
             <div className="row">
-              <div className="col-lg-8" style={{fontSize:'32px', marginTop:'auto', fontFamily:'MaisonNeueExtended-Bold,sans-serif'}}><h2>
+              <div className="col-lg-8" style={{fontSize:'32px', marginTop:'auto', fontFamily: 'Archivo Black,sans-serif', color:'#6c757d'}}><h2>
               MANAGE CATEGORY
               </h2>
               </div>

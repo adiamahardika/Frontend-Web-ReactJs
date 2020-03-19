@@ -2,25 +2,25 @@ import axios from 'axios';
 require('dotenv').config()
 
 export const createCity = (data) => {
-    // const authorization = localStorage.getItem('token');
-    // const userId = localStorage.getItem("user-id");
+    const authorization = localStorage.getItem('token');
+    const userId = localStorage.getItem("user-id");
     return {
         type: "CREATE_CITY",
         payload: axios({
             method: "POST",
             url: `${process.env.REACT_APP_URL}city`,
             data: data,
-            // headers: {
-            //     "authorization": authorization,
-            //     "user-id": userId
-            // }
+            headers: {
+                "authorization": authorization,
+                "user-id": userId
+            }
         })
     }
 }
 
 export const readCity = () => {
-    // const authorization = localStorage.getItem('token');
-    // const userId = localStorage.getItem("user-id");
+    const authorization = localStorage.getItem('token');
+    const userId = localStorage.getItem("user-id");
     return {
         type: "READ_CITY",
         payload: axios({
@@ -35,8 +35,8 @@ export const readCity = () => {
 }
 
 export const updateCity = (cityId, data) => {
-    // const authorization = localStorage.getItem('token');
-    // const userId = localStorage.getItem("user-id");
+    const authorization = localStorage.getItem('token');
+    const userId = localStorage.getItem("user-id");
     return {
         type: 'UPDATE_CITY',
         payload: axios({
@@ -52,8 +52,8 @@ export const updateCity = (cityId, data) => {
 }
 
 export const deleteCity = (cityId) => {
-    // const authorization = localStorage.getItem('token');
-    // const userId = localStorage.getItem("user-id");
+    const authorization = localStorage.getItem('token');
+    const userId = localStorage.getItem("user-id");
     return {
         type: 'DELETE_CITY',
         payload: axios({
@@ -68,8 +68,8 @@ export const deleteCity = (cityId) => {
 }
 
 export const searchCity = (data) => {
-    // const authorization = localStorage.getItem('token');
-    // const userId = localStorage.getItem("user-id");
+    const authorization = localStorage.getItem('token');
+    const userId = localStorage.getItem("user-id");
     return {
         type: 'SEARCH_CATEGORY',
         payload: axios({

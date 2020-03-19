@@ -8,6 +8,8 @@ import Item from '../components/modal/city/Item'
 class City extends Component {
     state = {}
     componentDidMount(){
+        if(!localStorage.getItem('token'))
+            this.props.history.push('/login')
         this.props.dispatch(readCity())
     }
     render() {
@@ -18,7 +20,7 @@ class City extends Component {
             <Navbar />
             <div className="container">
             <div className="row">
-              <div className="col-lg-8" style={{fontSize:'32px', marginTop:'auto', fontFamily:'MaisonNeueExtended-Bold,sans-serif'}}><h2>
+              <div className="col-lg-8" style={{fontSize:'32px', marginTop:'auto', fontFamily: 'Archivo Black,sans-serif', color:'#6c757d'}}><h2>
               MANAGE CITY
               </h2>
               </div>
