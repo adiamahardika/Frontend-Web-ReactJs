@@ -12,6 +12,7 @@ import Province from "./controllers/Province"
 import City from "./controllers/City"
 import SubCity from "./controllers/SubCity"
 import Login from "./controllers/Login"
+import History from "./controllers/History"
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
       <Route path="/city" component={City} />
       <Route path="/sub-city" component={SubCity} />
       <Route path="/login" component={Login} />
+      <Route path="/history" component={History} />
     </Router>
     </Provider>
   );

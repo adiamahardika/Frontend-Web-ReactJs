@@ -51,7 +51,7 @@ class Navbar extends Component {
                                             </div>
                                         </li>
                                         <li class="nav-item">
-                                            <Link class="nav-link" to="#">History Order</Link>
+                                            <Link class="nav-link" to="/history">History Order</Link>
                                         </li>
                                     </ul>
                                 </div>

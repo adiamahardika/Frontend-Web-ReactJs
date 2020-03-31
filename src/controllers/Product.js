@@ -71,27 +71,24 @@ class Product extends Component {
       if(!localStorage.getItem('token') && localStorage.getItem('role') != 'admin')
           this.props.history.push('/login')
       this.props.dispatch(readProduct())
-      var id = querystring.parse(this.props.location.search);
-        var value = querystring.parse(this.props.location.search);
-        if (id.paginateId !== undefined) {
-            let paginateId = id.paginateId
-            this.props.dispatch(readProduct(paginateId))
-        } else if (value.category !== undefined) {
-            let category = value.category
-            let product = this.state.product
-            let by = this.state.by
-            this.props.dispatch(readProduct(category, product, by))
-        } else if (value.product !== undefined) {
-            let category = this.state.category
-            let product = value.product
-            let by = this.state.by
-            this.props.dispatch(readProduct(category, product, by))
-        } else if (value.by !== undefined) {
-            let category = this.state.category
-            let product = this.state.product
-            let by = value.by
-            this.props.dispatch(readProduct(category, product, by))
-        }
+      var value = querystring.parse(this.props.location.search);
+    if (value.category !== undefined) {
+      const result = value.category
+      this.setState({
+        category: result
+      })
+    }
+    else if (value.product !== undefined) {
+      const result = value.product
+      this.setState({
+        product: result
+      })
+    } else if (value.by !== undefined) {
+      const result = value.by
+      this.setState({
+        by: result
+      })
+    }
     }
     parseToRupiah(number)
     {

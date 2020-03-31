@@ -1,0 +1,49 @@
+.headerMiddle{
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 700;
+}
+.image-phone{
+    width: 400px;
+}
+.images{
+    display: inline;
+    text-align: right;
+}
+
+.phone{
+    text-align: center;
+    transition: 1s;
+}
+.phone:hover{
+    transform: scale(1.1);
+}
+
+.advantages{
+    left: 180px;
+    margin-top: 50px;
+}
+.row .list{
+    text-align: left;
+    background-color: transparent;
+    transition: 1s;
+}
+.row .list:hover{
+    transform: scale(1.2);
+}
+.about{
+    display: block;
+    margin-top: 50px;
+}
+
+.text{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    font-size: 30px;
+    margin-top: 5px;
+    font-size: 18px
+}
+
+.image{
+    width: 100px;
+    height: 100px;
+}

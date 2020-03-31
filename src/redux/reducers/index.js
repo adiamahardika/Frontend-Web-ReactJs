@@ -6,6 +6,7 @@ import account from './account';
 import province from './province';
 import city from './city';
 import subCity from './subCity'
+import history from './history'
 
 export default combineReducers({
     products,
@@ -13,5 +14,6 @@ export default combineReducers({
     account,
     province,
     city,
-    subCity
+    subCity,
+    history
 });

@@ -2,7 +2,7 @@ import React, { Component, Fragment } from 'react';
 import "./css/home.css";
 
 import Navbar from "../components/Navbar"
-import Footer from "../components/Footer"
+import Middle from "../components/Middle"
 // import Sidebar from "../components/Sidebar"
 import Card from "../components/Card"
 import Contact from "../components/Contact"
@@ -19,7 +19,7 @@ class Home extends Component {
             <Fragment>
                 <Navbar />
                 <Card />
-                <Footer />
+                <Middle />
                 <Contact />
             </Fragment>
         );

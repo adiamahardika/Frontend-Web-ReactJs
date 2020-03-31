@@ -6,13 +6,11 @@ body {
 
 body {
   background-color: #ffffff;
-  font-family: "MaisonNeue-Book", sans-serif;
   /* background-image: url(/Login.jpg); */
 }
 .table{
   margin-top: 20px;
   margin-bottom: 20px;
-  font-family: "MaisonNeue-Book", sans-serif;
   text-align: center;
   margin-left: auto;
 }
@@ -42,13 +40,12 @@ body {
 .modal-header{
   background-color: #56ab2f;
   color: white;
-  font-family: "MaisonNeue-Book", sans-serif;
+
   font-size: 20px;
 }
 
 .modal-body{
 color: black;
-font-family: "MaisonNeue-Book", sans-serif;
 font-size: 20px;
 }
 .btn-success{

@@ -1,0 +1,39 @@
+body {
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    background-color: #ffffff;
+    /* font-family: "MaisonNeue-Book", sans-serif; */
+    /* background-image: url(/Login.jpg); */
+  }
+  .table{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    /* font-family: "MaisonNeue-Book", sans-serif; */
+    min-width: 100px;
+    text-align: center;
+  }
+  .table .thead-light th{
+    background-color: #56ab2f;
+    color: #ffffff;
+    border-color: white;
+    font-size: medium;
+  }
+  .table-bordered{
+    border: none;
+  }
+  .row{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: flex;
+  }
+  .item {
+    max-width: 150px;
+  }
+  
+  .desc {
+    min-width: 400px;
+  }
+  

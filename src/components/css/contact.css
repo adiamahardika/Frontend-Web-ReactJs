@@ -1,7 +1,8 @@
-.bismillah{
+.textFooter{
+    font-family: 'Source Sans Pro', sans-serif;
     color: white;
 }
-
-.yes{
-    margin-top: 20px;
+.footerText{
+    font-size: 40px;
+    font-weight: 600;
 }
