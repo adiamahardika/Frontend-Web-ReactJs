@@ -1,0 +1,43 @@
+.backgroundMakyur{
+  background-size: cover;
+  position: absolute;
+  background-repeat: no-repeat;
+  max-width: 100%;
+  max-height: 100%;
+  margin-left: 100px;
+}
+.card-body{
+    text-align: center;
+    background-color: transparent;
+}
+.logoMakyur{
+ height: 75px;
+}
+
+.card {
+  background-color: #ffffff;
+  font-family: open sans,tahoma,sans-serif;
+  position: absolute;
+  display: block;
+  width: 368px;
+  margin-top: 150px;
+  margin-left: 150px;
+  padding: 10px 32px 12px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  /* background-image: url(/Login.jpg); */
+}
+
+.container{
+  text-align: left;
+}
+
+.form-control{
+  font-family: open sans,tahoma,sans-serif;
+  font-size: 14px;
+}
+
+.btn-success{
+  background-color:#56ab2f !important;
+  border: none;
+}
