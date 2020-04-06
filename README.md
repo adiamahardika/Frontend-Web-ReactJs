@@ -31,7 +31,7 @@ MakYur
 * [`npm`](https://www.npmjs.com/get-npm)
 * [`react-js`](https://reactjs.org/docs/create-a-new-react-app.html)
 * [`redux`](https://redux.js.org/introduction/getting-started)
-* [`Backend-Point-Of-Sales`](https://github.com/adiamahardika/Backend-Point-Of-Sales)
+* [`Backend-RESTful-API`](https://github.com/adiamahardika/Backend-RESTful-API)
 
 ## Features
 * Login
@@ -57,4 +57,3 @@ You can visit the web [`here`](http://makyurapps.s3-website-us-east-1.amazonaws.
 ## Contributors
 * [Adia Mahardika](https://github.com/adiamahardika/)
 * [Salman Yassar](https://github.com/mannisar/)
-* [Muhammad Syahendra](https://github.com/hendras1722)
