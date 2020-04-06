@@ -1,26 +1,27 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import "./css/home.css";
 
 import Navbar from "../components/Navbar"
-import Footer from "../components/Footer"
+import Middle from "../components/Middle"
 // import Sidebar from "../components/Sidebar"
 import Card from "../components/Card"
+import Contact from "../components/Contact"
+// import { Form } from 'react-bootstrap';
 
 class Home extends Component {
     state = {}
+
+    componentDidMount() {
+        // localStorage.setItem('id', 0);
+    }
     render() {
         return (
-            <div className="row">
-                <div className="col-12">
-                    <Navbar />
-                </div>
-                <div className="col-12">
-                    <Card />
-                </div>
-                <div className="col-12">
-                    <Footer />
-                </div>
-            </div>
+            <Fragment>
+                <Navbar />
+                <Card />
+                <Middle />
+                <Contact />
+            </Fragment>
         );
     }
 }

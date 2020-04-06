@@ -1,0 +1,20 @@
+.navbar-nav{
+    line-height: 24px;
+}
+.nav-link{
+    color: black ;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 24px;
+}
+.dropdown-item{
+    color: black ;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 18px;
+    line-height: 24px;
+}
+
+.nav-link:hover{
+    color:green !important;
+}
