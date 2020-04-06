@@ -55,4 +55,6 @@ git clone https://github.com/adiamahardika/Frontend-Web-ReactJs.git
 You can visit the web [`here`](http://makyurapps.s3-website-us-east-1.amazonaws.com/)
 
 ## Contributors
-[Adia Mahardika](https://github.com/adiamahardika/)
+* [Adia Mahardika](https://github.com/adiamahardika/)
+* [Salman Yassar](https://github.com/mannisar/)
+* [Muhammad Syahendra](https://github.com/hendras1722)
